@@ -1,2 +1,2 @@
 # ai
-Ai module built on odoo platform
+Ai module built on odoo v11.0
