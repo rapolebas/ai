@@ -19,7 +19,11 @@ class ImageRecognition(models.Model):
 
     @api.model_cr
     def init(self):
-        maybe_download_and_extract()
+        """Download and extract model tar file."""
+        dest_directory = FLAGS.model_dir
+        filepath = os.path.join(dest_directory, 'classify_image_graph_def.pb')
+        if not os.path.exists(filepath):
+            maybe_download_and_extract()
 
     @api.onchange('sample')
     def _onchange_sample(self):
