@@ -17,9 +17,9 @@ class ImageRecognition(models.Model):
     sample = fields.Binary(string='Sample', required=True)
     score = fields.Float(string='Score')
 
-    # @api.model_cr
-    # def init(self):
-        # maybe_download_and_extract()
+    @api.model_cr
+    def init(self):
+        maybe_download_and_extract()
 
     @api.onchange('sample')
     def _onchange_sample(self):
